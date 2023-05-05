@@ -1,0 +1,16 @@
+name: Pull Request Action
+on:
+  push:
+    branches-ignore:
+      - main
+      - dev
+      
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pull Request
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: echo context
