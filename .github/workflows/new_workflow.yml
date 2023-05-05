@@ -18,5 +18,5 @@ jobs:
       run: echo "${{steps.set-result.outputs.result}}"
     - name: Print Context
       env: 
-        CONTEXT: ToJson(context)
+        CONTEXT: ${{toJson(context)}}
       run: echo "$CONTEXT"
