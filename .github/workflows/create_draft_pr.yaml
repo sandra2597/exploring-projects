@@ -17,7 +17,6 @@ jobs:
             const branch = '${{github.ref_name}}'
             const issue = parseInt(branch.split('-')[0], 10)
             const result = await github.rest.pulls.create({
-              title: '[Example] Simple demo',
               owner,
               repo,
               head: '${{ github.ref_name }}',
