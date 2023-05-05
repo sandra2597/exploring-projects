@@ -14,4 +14,6 @@ jobs:
       with:
         script: console.log(context)
     - name: Dump github context
-      run: echo ${{toJson(github)}}
+      env:
+        CONTEXT:  ${{toJson(github)}}
+      run: echo $CONTEXT
